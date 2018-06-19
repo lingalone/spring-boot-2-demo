@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+    <cache name="testDomain"
+           maxElementsInMemory="100"
+           eternal="false"
+           overflowToDisk="false"
+           timeToIdleSeconds="10"
+           timeToLiveSeconds="10"
+           diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="LRU"
+    />
+
+</ehcache>

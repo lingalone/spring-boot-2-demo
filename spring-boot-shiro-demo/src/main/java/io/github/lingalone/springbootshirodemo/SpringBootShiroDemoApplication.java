@@ -10,3 +10,6 @@ public class SpringBootShiroDemoApplication {
 		SpringApplication.run(SpringBootShiroDemoApplication.class, args);
 	}
 }
+
+
+//
