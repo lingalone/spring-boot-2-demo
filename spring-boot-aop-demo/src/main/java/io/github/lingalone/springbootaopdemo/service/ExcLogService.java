@@ -20,16 +20,17 @@ public class ExcLogService {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 //    @ExcLog
     @ExcServiceLog(name = "ExcLogService")
-    public void test(){
+    public int test(Integer ddddd){
 
         try {
-            logger.info("test start");
+            logger.info("test start. ->{}", ddddd);
             Thread.sleep(10000);
             logger.info("test start");
+            return 100+ddddd;
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+        return 0+ddddd;
 
 
     }

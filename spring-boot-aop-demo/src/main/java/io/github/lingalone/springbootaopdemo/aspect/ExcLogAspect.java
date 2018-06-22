@@ -22,6 +22,9 @@ import java.lang.reflect.Method;
  * @author <a href="https://github.com/lingalone">lingalone</a>
  * @version 1.0.0
  * @link http://www.baeldung.com/spring-aop-pointcut-tutorial
+ * @link https://my.oschina.net/itblog/blog/211693
+ * @link https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#aop
+ * @link https://www.programcreek.com/java-api-examples/?class=org.aspectj.lang.ProceedingJoinPoint&method=getArgs
  * @since 2018/6/22
  */
 
@@ -38,26 +41,31 @@ public class ExcLogAspect {
     public void excServiceLog(){}
 
 
-
-
-
-
-
-
-
-
+    /**
+     *
+     *
+     * @param proceedingJoinPoint
+     * @return
+     */
     @Around("excServiceLog()")
-    public void serviceLogAround(ProceedingJoinPoint proceedingJoinPoint){
+    public Object serviceLogAround(ProceedingJoinPoint proceedingJoinPoint){
 
         try {
             MethodSignature signature = (MethodSignature) proceedingJoinPoint.getSignature();
             Method method = signature.getMethod();
 
+            String[] paramNames = signature.getParameterNames();
+            if(paramNames.length==proceedingJoinPoint.getArgs().length)
+                for (int i = 0; i < paramNames.length; i++) {
+
+                    logger.info("params -> {}:{}", paramNames[i], proceedingJoinPoint.getArgs()[i]!=null ? proceedingJoinPoint.getArgs()[i].toString(): "null");
+
+                }
             logger.info("method name -> {}",method.getName());
             ExcServiceLog serviceLog = method.getAnnotation(ExcServiceLog.class);
             logger.info("annotation name -> {}",serviceLog.name());
             logger.info("around start -> {}");
-            proceedingJoinPoint.proceed();
+            Object returnValue = proceedingJoinPoint.proceed();
             logger.info("around end -> {}");
 
 
@@ -76,10 +84,13 @@ public class ExcLogAspect {
             };
             exeService.addTask(excBody);
 
+            //必须原路返回
+            return returnValue;
 
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
+        return null;
     }
 
 

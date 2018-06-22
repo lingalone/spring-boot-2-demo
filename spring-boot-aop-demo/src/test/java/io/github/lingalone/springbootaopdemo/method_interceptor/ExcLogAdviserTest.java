@@ -19,7 +19,9 @@ public class ExcLogAdviserTest {
 
     @Test
     public void test(){
-        excLogService.test();
+
+        System.out.println( excLogService.test(11111));
+
     }
 
 }

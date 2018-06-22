@@ -26,6 +26,6 @@ public class ExcLogController {
     @RequestMapping("/test")
     @ExcLog
     public void test(){
-        excLogService.test();
+        excLogService.test(111);
     }
 }
