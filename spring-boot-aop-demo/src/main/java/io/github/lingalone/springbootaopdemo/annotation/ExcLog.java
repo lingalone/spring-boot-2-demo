@@ -1,9 +1,6 @@
-package io.github.lingalone.springbootaopdemo.method_interceptor;
+package io.github.lingalone.springbootaopdemo.annotation;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,6 +12,7 @@ import java.lang.annotation.Target;
  */
 @Target({ ElementType.TYPE, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
+@Documented
 public @interface ExcLog {
-    public String name();
+    public String name() default "";
 }
