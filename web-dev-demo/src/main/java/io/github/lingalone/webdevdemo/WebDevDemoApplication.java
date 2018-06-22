@@ -8,7 +8,7 @@ import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
 @ServletComponentScan    //使Spring能够扫描到我们自己编写的servlet和filter
-@MapperScan(basePackages = "io.github.lingalone.timcaptchaservice.mapper")
+@MapperScan(basePackages = "io.github.lingalone.webdevdemo.mapper")
 @EnableCaching
 public class WebDevDemoApplication {
 
