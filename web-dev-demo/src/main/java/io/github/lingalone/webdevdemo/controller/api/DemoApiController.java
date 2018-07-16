@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.*;
  * @since 2018/5/8
  */
 
-@Api(tags = "Demo-Demo")
+
+@Api(value = "/demo", description = "Operations about demo",tags = "Demo-Demo", position=0)
 @RestController
 @RequestMapping("/api/v1/demo")
 public class DemoApiController {
@@ -24,14 +25,12 @@ public class DemoApiController {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
 
-    @ApiOperation(value = "get-test", notes = "")
+    @ApiOperation(
+            value = "get-test",
+            notes = "",
+            response = Demo.class
+    )
     @GetMapping(value = {"","/test"})
-//    @ApiImplicitParams({
-//            @ApiImplicitParam(
-//                    name = "demo",
-//                    dataType = "Demo",
-//                    paramType = "query")
-//    })
     public Demo getDemo(Demo demo) {
         logger.debug("..........xxxx................");
         return new Demo();
