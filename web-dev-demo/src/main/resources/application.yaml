@@ -1,0 +1,34 @@
+
+
+server:
+  port: 8181
+spring:
+  profiles:
+    active: dev
+    include: swagger
+  devtools:
+    livereload:
+      enabled: true
+management:
+  context-path: /monitor
+  security:
+    enabled: true
+  port: 9191
+
+endpoints:
+  shutdown:
+    enabled: true
+  actuator:
+    enabled: true
+
+info:
+  app:
+    name: tim-captcha-service
+    version: 1.0.0
+
+
+
+
+
+
+

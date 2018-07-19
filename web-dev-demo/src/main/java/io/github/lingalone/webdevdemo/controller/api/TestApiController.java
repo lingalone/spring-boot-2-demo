@@ -29,7 +29,7 @@ import java.util.UUID;
  * @since 2018/3/30
  */
 @RestController
-@RequestMapping("/api/v1/test")
+@RequestMapping("/api/test")
 public class TestApiController {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
