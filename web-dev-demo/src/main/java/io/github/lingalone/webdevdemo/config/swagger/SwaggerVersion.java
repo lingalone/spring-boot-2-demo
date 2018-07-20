@@ -1,4 +1,4 @@
-package io.github.lingalone.webdevdemo.property;
+package io.github.lingalone.webdevdemo.config.swagger;
 
 import lombok.Data;
 

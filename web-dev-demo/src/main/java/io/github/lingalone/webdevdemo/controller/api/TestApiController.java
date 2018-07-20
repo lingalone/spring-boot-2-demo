@@ -5,6 +5,7 @@ import com.github.pagehelper.PageHelper;
 import io.github.lingalone.webdevdemo.common.Page;
 import io.github.lingalone.webdevdemo.common.PageTransfer;
 import io.github.lingalone.webdevdemo.common.ReturnMsg;
+import io.github.lingalone.webdevdemo.config.apiversion.ApiVersion;
 import io.github.lingalone.webdevdemo.constanst.RequestStatus;
 import io.github.lingalone.webdevdemo.domain.TestDomain;
 import io.github.lingalone.webdevdemo.mapper.TestDomainMapper;
@@ -29,7 +30,8 @@ import java.util.UUID;
  * @since 2018/3/30
  */
 @RestController
-@RequestMapping("/api/test")
+@ApiVersion(1)
+@RequestMapping("/api/{api_version}/test")
 public class TestApiController {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());

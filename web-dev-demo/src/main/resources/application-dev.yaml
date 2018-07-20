@@ -15,7 +15,6 @@ spring:
     password: ling1100
     driver-class-name: com.mysql.jdbc.Driver
     platform: all
-    type: com.alibaba.druid.pool.DruidDataSource
     tomcat:
       initial-size: 5
       min-idle: 5
@@ -28,6 +27,7 @@ spring:
       test-on-borrow: false
       test-on-return: false
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    type: com.zaxxer.hikari.HikariDataSource
 
   cache:
     ehcache:

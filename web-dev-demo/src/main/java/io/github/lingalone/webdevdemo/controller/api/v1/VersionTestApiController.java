@@ -41,7 +41,7 @@ public class VersionTestApiController {
 
 
     @RequestMapping(
-            value = "/hello" ,
+            value = "/hello1" ,
             method = RequestMethod.GET,
             consumes = {MediaType.ALL_VALUE, MediaType.APPLICATION_FORM_URLENCODED_VALUE},
             produces = MediaType.ALL_VALUE

@@ -1,4 +1,4 @@
-package io.github.lingalone.webdevdemo.common;
+package io.github.lingalone.webdevdemo.util;
 
 /**
  * Created with IntelliJ IDEA.
