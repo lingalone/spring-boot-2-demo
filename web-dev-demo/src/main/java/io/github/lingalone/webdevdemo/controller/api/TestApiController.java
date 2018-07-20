@@ -9,6 +9,8 @@ import io.github.lingalone.webdevdemo.config.apiversion.ApiVersion;
 import io.github.lingalone.webdevdemo.constanst.RequestStatus;
 import io.github.lingalone.webdevdemo.domain.TestDomain;
 import io.github.lingalone.webdevdemo.mapper.TestDomainMapper;
+import io.github.lingalone.webdevdemo.transfer.TestDomainTransfer;
+import io.github.lingalone.webdevdemo.vo.TestDomainVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import tk.mybatis.mapper.common.base.select.SelectOneMapper;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -100,12 +103,19 @@ public class TestApiController {
 
     @GetMapping(value = "get")
     @Cacheable(cacheNames  = "testDomain" , key = "#id")
-    public ReturnMsg<TestDomain> get(@RequestParam String id){
-        ReturnMsg<TestDomain> res = new ReturnMsg<>();
+    public ReturnMsg<TestDomainVO> get(@RequestParam String id){
+        ReturnMsg<TestDomainVO> res = new ReturnMsg<>();
         res.setRequestStatus(RequestStatus.SUCCESS);
         TestDomain domain = new TestDomain();
         domain.setId(id);
-        res.setData(testDomainMapper.selectOne(domain));
+        System.out.println(domain.getClass().getClassLoader());
+        System.out.println(SelectOneMapper.class.getClassLoader());
+//        TestDomain testDomain = testDomainMapper.selectOne(domain);
+        System.out.println(testDomainMapper.selectOne(domain).getClass().getClassLoader());
+
+        TestDomainVO vo = TestDomainTransfer.transfer.toVO(testDomainMapper.selectOne(domain));
+
+        res.setData(vo);
         return res;
     }
 

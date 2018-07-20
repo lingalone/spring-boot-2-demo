@@ -8,6 +8,15 @@ logging:
 pagehelper:
   auto-dialect: true
   close-conn: true
+
+
+
+#mapper:
+#    mappers:
+##      - io.github.novaframe.data.mybatis.MyMapper
+#    not-empty: false
+#    identity: MYSQL
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/tim_test?useUnicode=true&characterEncoding=utf-8&useSSL=false
@@ -35,8 +44,13 @@ spring:
   devtools:
     livereload:
       enabled: true
-    restart:
-      exclude: mapper
+#    restart:
+#      exclude: mapper
+
+
+#mybatis:
+#    type-aliases-package: io.github.lingalone.webdevdemo.domain
+#    mapper-locations: classpath:mapper/*.xml
 
 
 swagger:

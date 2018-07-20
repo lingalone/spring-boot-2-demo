@@ -12,7 +12,6 @@ spring:
   context-path: /monitor
   security:
     enabled: true
-  port: 9191
 
 
 
@@ -23,7 +22,8 @@ info:
 management:
   server:
     servlet:
-      context-path: /management
+      context-path: /manage
+    port: 9191
   # https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html
   endpoint:
     shutdown:

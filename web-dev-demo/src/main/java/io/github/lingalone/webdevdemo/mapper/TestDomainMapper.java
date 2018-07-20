@@ -14,7 +14,7 @@ import tk.mybatis.mapper.common.Mapper;
  * @since 2018/4/2
  */
 
-@Component
+
 public interface TestDomainMapper extends Mapper<TestDomain>{
 
 }

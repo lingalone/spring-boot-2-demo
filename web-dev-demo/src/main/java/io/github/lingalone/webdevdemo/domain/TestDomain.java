@@ -16,8 +16,8 @@ import javax.validation.constraints.NotNull;
 @Data
 public class TestDomain {
 
-    @NotNull(message = " TestDomain.id cannot be null")
+//    @NotNull(message = " TestDomain.id cannot be null")
     private String id;
-    @NotNull(message = " TestDomain.context cannot be null")
+//    @NotNull(message = " TestDomain.context cannot be null")
     private String context;
 }

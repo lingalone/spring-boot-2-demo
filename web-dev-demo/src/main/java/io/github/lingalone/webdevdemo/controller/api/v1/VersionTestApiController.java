@@ -1,24 +1,12 @@
 package io.github.lingalone.webdevdemo.controller.api.v1;
 
-import com.github.pagehelper.PageHelper;
-import io.github.lingalone.webdevdemo.common.Page;
-import io.github.lingalone.webdevdemo.common.PageTransfer;
-import io.github.lingalone.webdevdemo.common.ReturnMsg;
 import io.github.lingalone.webdevdemo.config.apiversion.ApiVersion;
-import io.github.lingalone.webdevdemo.constanst.RequestStatus;
-import io.github.lingalone.webdevdemo.domain.TestDomain;
 import io.github.lingalone.webdevdemo.mapper.TestDomainMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.MediaType;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import java.util.List;
-import java.util.UUID;
 
 /**
  * Created with IntelliJ IDEA.
