@@ -1,7 +1,7 @@
 package io.github.lingalone.webdevdemo.controller.api;
 
 
-import io.github.lingalone.webdevdemo.domain.Demo;
+import io.github.lingalone.webdevdemo.vo.DemoVO;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,12 +28,12 @@ public class DemoApiController {
     @ApiOperation(
             value = "get-test",
             notes = "",
-            response = Demo.class
+            response = DemoVO.class
     )
     @GetMapping(value = {"","/test"})
-    public Demo getDemo(Demo demo) {
+    public DemoVO getDemo(DemoVO demo) {
         logger.debug("..........xxxx................");
-        return new Demo();
+        return new DemoVO();
     }
 
     @ApiOperation(value = "post-test", notes = "")
@@ -41,13 +41,13 @@ public class DemoApiController {
     @ApiImplicitParams({
             @ApiImplicitParam(
                     name = "demo",
-                    dataType = "Demo",
+                    dataType = "DemoVO",
                     examples = @io.swagger.annotations.Example(
                             value = {
                                     @ExampleProperty(value = "{'property': 'test'}", mediaType = "application/json")
                             }))
     })
-    public String postDemo(@RequestBody Demo demo) {
+    public String postDemo(@RequestBody DemoVO demo) {
         logger.debug("..........xxxx................");
         return "test : hello world !";
     }
