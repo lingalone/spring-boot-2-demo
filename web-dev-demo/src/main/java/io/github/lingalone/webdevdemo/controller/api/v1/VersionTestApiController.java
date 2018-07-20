@@ -28,8 +28,8 @@ import java.util.UUID;
  * @link
  * @since 2018/3/30
  */
-
-@RequestMapping("/api/v1/test")
+@ApiVersion(1)
+@RequestMapping("/api/{api_version}/test")
 @RestController("VersionTestApiController-v1")
 public class VersionTestApiController {
 

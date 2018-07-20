@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @link
  * @since 2018/3/30
  */
-
-@RequestMapping("/api/v2/test")
+@ApiVersion(2)
+@RequestMapping("/api/{api_version}/test")
 @RestController("VersionTestApiController-v2")
 public class VersionTestApiController {
 

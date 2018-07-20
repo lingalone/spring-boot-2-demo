@@ -1,3 +1,5 @@
+#debug: true
+
 logging:
   level:
     io.github.lingalone.timcaptchaservice.mapper: debug
@@ -30,6 +32,11 @@ spring:
   cache:
     ehcache:
       config: classpath:config/cache-config.xml
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      exclude: mapper
 
 
 swagger:

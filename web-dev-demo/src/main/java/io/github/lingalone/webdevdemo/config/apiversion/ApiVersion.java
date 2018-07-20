@@ -7,17 +7,11 @@ import java.lang.annotation.*;
 
 
 
-/*https://www.hifreud.com/2018/01/30/01-API-versioning/*/
-@Target({ ElementType.METHOD, ElementType.TYPE })
+@Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Mapping
 public @interface ApiVersion {
-
-    /**
-     * version
-     *
-     * @return
-     */
+    // 版本号
     int value();
 }

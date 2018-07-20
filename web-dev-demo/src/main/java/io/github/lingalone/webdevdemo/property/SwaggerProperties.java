@@ -16,7 +16,6 @@ import java.util.List;
  */
 
 @ConfigurationProperties(prefix = "swagger", ignoreUnknownFields = false)
-//@ConfigurationProperties("swagger")
 @Data
 public class SwaggerProperties {
     private List<SwaggerVersion> versions = new ArrayList<>();

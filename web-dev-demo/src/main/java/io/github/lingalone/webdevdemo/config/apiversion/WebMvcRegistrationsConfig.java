@@ -14,7 +14,7 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
  * @since 2018/7/19
  */
 
-//@Configuration
+@Configuration
 public class WebMvcRegistrationsConfig implements WebMvcRegistrations {
     @Override
     public RequestMappingHandlerMapping getRequestMappingHandlerMapping() {

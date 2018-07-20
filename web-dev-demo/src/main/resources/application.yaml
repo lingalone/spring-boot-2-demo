@@ -9,23 +9,30 @@ spring:
   devtools:
     livereload:
       enabled: true
-management:
   context-path: /monitor
   security:
     enabled: true
   port: 9191
 
-endpoints:
-  shutdown:
-    enabled: true
-  actuator:
-    enabled: true
+
 
 info:
   app:
     name: tim-captcha-service
     version: 1.0.0
-
+management:
+  server:
+    servlet:
+      context-path: /management
+  # https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: "*"
 
 
 
